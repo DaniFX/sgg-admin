@@ -7,6 +7,9 @@ import { UsersPage } from '@/pages/UsersPage'
 import { RolesPage } from '@/pages/RolesPage'
 import { AppsPage } from '@/pages/AppsPage'
 import { ServicesPage } from '@/pages/ServicesPage'
+import { DocumentiPage } from '@/pages/DocumentiPage'
+import { DocumentoDetailPage } from '@/pages/DocumentoDetailPage'
+import { DocumentoUploadPage } from '@/pages/DocumentoUploadPage'
 
 function ProtectedRoute({ children }: { children: React.ReactNode }) {
   const { user, loading } = useAuth()
@@ -41,6 +44,10 @@ function AppRoutes() {
                 <Route path="/roles" element={<RolesPage />} />
                 <Route path="/apps" element={<AppsPage />} />
                 <Route path="/services" element={<ServicesPage />} />
+                {/* Modulo Documentale */}
+                <Route path="/documenti" element={<DocumentiPage />} />
+                <Route path="/documenti/upload" element={<DocumentoUploadPage />} />
+                <Route path="/documenti/:id" element={<DocumentoDetailPage />} />
               </Routes>
             </DashboardLayout>
           </ProtectedRoute>
